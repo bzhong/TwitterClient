@@ -1,14 +1,14 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Twitter Client*
 
-**Name of your app** is an android app that allows a user to view home and mentions timelines, view user profiles with user timelines, as well as compose and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
+**Twitter Client** is an android app that allows a user to view home and mentions timelines, view user profiles with user timelines, as well as compose and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-* [ ]	User can **sign in to Twitter** using OAuth login
+* [x]	User can **sign in to Twitter** using OAuth login
 * [ ] User can **switch between Timeline and Mention views using tabs**
   * [ ] User is displayed the username, name, and body for each tweet
   * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
