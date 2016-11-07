@@ -63,7 +63,6 @@ public class UserInfoFragment extends Fragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 user = User.fromJson(response);
-//                getSupportActionBar().setTitle("@" + user.getScreenName());
                 populateProfileHeader(user);
             }
         });

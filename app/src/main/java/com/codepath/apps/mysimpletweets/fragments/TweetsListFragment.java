@@ -94,4 +94,9 @@ public class TweetsListFragment extends android.support.v4.app.Fragment {
     public void addAll(List<Tweet> tweets) {
         adapter.addAll(tweets);
     }
+
+    public void add(Tweet tweet) {
+        tweets.add(0, tweet);
+        adapter.notifyDataSetChanged();
+    }
 }

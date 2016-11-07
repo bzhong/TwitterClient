@@ -15,8 +15,16 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.mysimpletweets.R;
 import com.codepath.apps.mysimpletweets.fragments.HomeTimelineFragment;
 import com.codepath.apps.mysimpletweets.fragments.MentionsTimelineFragment;
+import com.codepath.apps.mysimpletweets.fragments.TweetsListFragment;
+import com.codepath.apps.mysimpletweets.models.Tweet;
+
+import org.parceler.Parcels;
 
 public class TimelineActivity extends AppCompatActivity {
+
+    private final int REQUEST_CODE = 20;
+    ViewPager vpPager;
+    TweetsPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +33,9 @@ public class TimelineActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
-        vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager()));
+        vpPager = (ViewPager) findViewById(R.id.viewpager);
+        adapter = new TweetsPagerAdapter(getSupportFragmentManager());
+        vpPager.setAdapter(adapter);
 
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
@@ -77,4 +86,13 @@ public class TimelineActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+            Tweet tweet = Parcels.unwrap(data.getParcelableExtra("tweet"));
+            int index = vpPager.getCurrentItem();
+            TweetsListFragment fragment = (TweetsListFragment) adapter.getItem(index);
+            fragment.add(tweet);
+        }
+    }
 }
