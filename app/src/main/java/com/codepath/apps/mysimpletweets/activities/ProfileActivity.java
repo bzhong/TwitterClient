@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.codepath.apps.mysimpletweets.R;
+import com.codepath.apps.mysimpletweets.fragments.UserInfoFragment;
 import com.codepath.apps.mysimpletweets.fragments.UserTimelineFragment;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -19,8 +20,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         String screenName = getIntent().getStringExtra("screen_name");
         if (savedInstanceState == null) {
+            UserInfoFragment userInfoFragment = UserInfoFragment.newInstance(screenName);
             UserTimelineFragment userFragment = UserTimelineFragment.newInstance(screenName);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.userInfoContainer, userInfoFragment);
             ft.replace(R.id.flContainer, userFragment);
             ft.commit();
         }
