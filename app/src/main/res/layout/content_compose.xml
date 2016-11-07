@@ -53,13 +53,14 @@
         android:layout_height="400dp"
         android:inputType="textMultiLine"
         android:ems="10"
+        android:maxLength="@string/tweet_max_length"
         android:layout_below="@+id/rlComposeHeader"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:hint="@string/default_tweet"
         android:gravity="top|left"
-        android:text="What’s happening"
         android:id="@+id/tweetText" />
 
     <RelativeLayout

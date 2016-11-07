@@ -24,8 +24,8 @@ import org.scribe.builder.api.TwitterApi;
 public class TwitterClient extends OAuthBaseClient {
 	public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class; // Change this
 	public static final String REST_URL = "https://api.twitter.com/1.1"; // Change this, base API URL
-	public static final String REST_CONSUMER_KEY = "0cJU1dEgRHnhipB1IiPuMM508";       // Change this
-	public static final String REST_CONSUMER_SECRET = "DNxMOt88aVM2nhhNjIDuYxom7rklysXCjZnWiW555lFERzzMhH"; // Change this
+	public static final String REST_CONSUMER_KEY = "q8TO7kXs1Qbqkw4q5r6DvqOC2";       // Change this
+	public static final String REST_CONSUMER_SECRET = "YlqtJpATO65UnzWhVTuxzrzfYdeXOSFFsTYhSho3H7QoENyo60"; // Change this
 	public static final String REST_CALLBACK_URL = "oauth://cpsimpletweets"; // Change this (here and in manifest)
 
 	public TwitterClient(Context context) {
@@ -55,9 +55,18 @@ public class TwitterClient extends OAuthBaseClient {
         getClient().get(apiUrl, params, handler);
     }
 
-    public void getUserInfo(AsyncHttpResponseHandler handler) {
+    public void getUserInfo(String screenName, AsyncHttpResponseHandler handler) {
         String apiUrl = getApiUrl("account/verify_credentials.json");
-        getClient().get(apiUrl, null, handler);
+        RequestParams params = new RequestParams();
+        params.put("screen_name", screenName);
+        getClient().get(apiUrl, params, handler);
+    }
+
+    public void postTweet(String text, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/update.json");
+        RequestParams params = new RequestParams();
+        params.put("status", text);
+        getClient().post(apiUrl, params, handler);
     }
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint

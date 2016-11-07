@@ -8,5 +8,7 @@
     <string name="login_title">Welcome to Twitter</string>
     <string name="login_desc">See what’s happening in the world right now</string>
     <string name="title_activity_compose">Compose</string>
+    <string name="default_tweet">What’s happening</string>
+    <string name="tweet_max_length">140</string>
 
 </resources>
