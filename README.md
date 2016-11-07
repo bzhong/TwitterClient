@@ -9,21 +9,21 @@ Time spent: **4** hours spent in total
 The following **required** functionality is completed:
 
 * [x]	User can **sign in to Twitter** using OAuth login
-* [ ] User can **switch between Timeline and Mention views using tabs**
-  * [ ] User is displayed the username, name, and body for each tweet
+* [x] User can **switch between Timeline and Mention views using tabs**
+  * [x] User is displayed the username, name, and body for each tweet
   * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
   * [ ] User can **pull down to refresh tweets** in either timeline
   * [ ] User can view more tweets as they scroll with [infinite pagination](http://guides.codepath.com/android/Endless-Scrolling-with-AdapterViews-and-RecyclerView). Number of tweets is unlimited.
-* [ ] User can navigate to **view their own profile**
-  * [ ] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
-* [ ] User can **click on the profile image** in any tweet to see **another user's** profile.
- * [ ] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
- * [ ] Profile view includes that user's timeline
-* [ ] User can **compose and post a new tweet**
-  * [ ] User can click a “Compose” icon in the Action Bar on the top right
-  * [ ] User can then enter a new tweet and post this to twitter
+* [x] User can navigate to **view their own profile**
+  * [x] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+* [x] User can **click on the profile image** in any tweet to see **another user's** profile.
+ * [x] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+ * [x] Profile view includes that user's timeline
+* [x] User can **compose and post a new tweet**
+  * [x] User can click a “Compose” icon in the Action Bar on the top right
+  * [x] User can then enter a new tweet and post this to twitter
   * [ ] User is taken back to home timeline with **new tweet visible** in timeline
-  * [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
+  * [x] User can **see a counter with total number of characters left for tweet** on compose tweet page
 * [ ] When a network request is sent, user sees an [indeterminate progress indicator](http://guides.codepath.com/android/Handling-ProgressBars#progress-within-actionbar)
 * [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in an offline mode.
 
