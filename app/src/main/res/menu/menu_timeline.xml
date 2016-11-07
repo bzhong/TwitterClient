@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.codepath.apps.mysimpletweets.activities.TimelineActivity">
 
+    <item android:id="@+id/miCompose"
+        android:title="Compose"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_compose"
+        android:onClick="onCreateTweet" />
+
     <item android:id="@+id/miProfile"
         android:title="Profile"
         app:showAsAction="ifRoom"
